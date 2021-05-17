@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_NewbieWarrior_Body_Mage
+  m_Shader: {fileID: -6465566751694194690, guid: ff99899346a71bf4888cfe39cabf1fb4,
+    type: 3}
+  m_ShaderKeywords: _ARMORNEWBIEWARRIORBELT_ON _ARMORNEWBIEWARRIORBOOTS_ON _ARMORNEWBIEWARRIORCHEST_ON
+    _ARMORNEWBIEWARRIORGLOVES_ON _ARMORNEWBIEWARRIORPANTS_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - BaseColor:
+        m_Texture: {fileID: 2800000, guid: ba5fa9e67abab154bbbc1f46672d4979, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Normal:
+        m_Texture: {fileID: 2800000, guid: c3432ee570b149a448d8955b299ad7c4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_A544C9F:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ArcherMask:
+        m_Texture: {fileID: 2800000, guid: 36610a2f23ec6864d8098fad87c1f7c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseColor:
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DK_MaskLower:
+        m_Texture: {fileID: 2800000, guid: 6c8c126ed726b884fb155c9f88533368, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DK_MaskUpper:
+        m_Texture: {fileID: 2800000, guid: 07a920472e98d8b4e94db58cf1174ee6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emissive:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mage_LowerMask:
+        m_Texture: {fileID: 2800000, guid: 523f31f85ccc56144ae2fa243521de91, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mage_UpperMask:
+        m_Texture: {fileID: 2800000, guid: 0bb0d3c8bc40b274fb1c3b04add50b9b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NR_LowerMask:
+        m_Texture: {fileID: 2800000, guid: d7e8e7dcc8b380846a2f443d152cafdf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NR_UpperMask:
+        m_Texture: {fileID: 2800000, guid: 66893b81d5a2ade4f91ecce6804598c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NW_LowerMask:
+        m_Texture: {fileID: 2800000, guid: 3e20319eea42dfa4a865931c8aa8d70f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NW_UpperMask:
+        m_Texture: {fileID: 2800000, guid: 42ef7f8fd771ca741a5dca0ebc44053a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NewbieMage_Mask:
+        m_Texture: {fileID: 2800000, guid: f9d375215ba9a0e4380dc2cf47b16f74, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PeasantMask:
+        m_Texture: {fileID: 2800000, guid: ff80a1f91b05ee14ebd3e3e4aeb431e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Underhair:
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Boolean_247D68D8: 0
+    - HueShift: 0
+    - Vector1_5A43C72B: 0
+    - _ArmorArcherBoots: 0
+    - _ArmorArcherChest: 0
+    - _ArmorArcherGloves: 0
+    - _ArmorArcherPants: 0
+    - _ArmorDeathknightArmbandages: 0
+    - _ArmorDeathknightBoots: 0
+    - _ArmorDeathknightChest: 0
+    - _ArmorDeathknightGloves: 0
+    - _ArmorDeathknightPants: 0
+    - _ArmorMageArmbandages: 0
+    - _ArmorMageBoots: 0
+    - _ArmorMageChest: 0
+    - _ArmorMageGloves: 0
+    - _ArmorMagePants: 0
+    - _ArmorMageRobe: 0
+    - _ArmorNewbieMageBelt: 0
+    - _ArmorNewbieMageBoots: 0
+    - _ArmorNewbieMageChest: 0
+    - _ArmorNewbieMageRobe: 0
+    - _ArmorNewbieRangerBelt: 0
+    - _ArmorNewbieRangerBoots: 0
+    - _ArmorNewbieRangerChest: 0
+    - _ArmorNewbieRangerGloves: 0
+    - _ArmorNewbieRangerPants: 0
+    - _ArmorNewbieWarriorBelt: 1
+    - _ArmorNewbieWarriorBoots: 1
+    - _ArmorNewbieWarriorChest: 1
+    - _ArmorNewbieWarriorGloves: 1
+    - _ArmorNewbieWarriorPants: 1
+    - _ArmorPeasantBoots: 0
+    - _ArmorPeasantPants: 0
+    - _ArmorPeasantShirt: 0
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EmissiveIntensity: 1.59
+    - _Gloss: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HasEmissive: 0
+    - _HasUnderhair: 0
+    - _HueShift: 0
+    - _HueShiftEnabled: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - Color_725BD794: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissiveColor: {r: 0, g: 0.084820986, b: 1, a: 1}

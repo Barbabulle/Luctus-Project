@@ -1,1 +1,1 @@
-Luctus Project
+Luctus

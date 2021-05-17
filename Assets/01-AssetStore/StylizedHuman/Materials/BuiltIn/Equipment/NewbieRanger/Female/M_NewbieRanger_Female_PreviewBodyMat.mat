@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_NewbieRanger_Female_PreviewBodyMat
+  m_Shader: {fileID: 4800000, guid: fded3eb2e618e6146b0e8da198d84ce6, type: 3}
+  m_ShaderKeywords: _ARMORNEWBIERANGERBELT_ON _ARMORNEWBIERANGERBOOTS_ON _ARMORNEWBIERANGERCHEST_ON
+    _ARMORNEWBIERANGERGLOVES_ON _ARMORNEWBIERANGERPANTS_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ArcherMask_Lower:
+        m_Texture: {fileID: 2800000, guid: a92a01c4cb86edc4d953ad4fba1cbf56, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ArcherMask_Upper:
+        m_Texture: {fileID: 2800000, guid: 958fcf79b0edac3469d7f18ddb7471e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseColor:
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DK_MaskUpper:
+        m_Texture: {fileID: 2800000, guid: 30eb9fff3bd6a90498577fb7e83a2f03, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mage_LowerMask:
+        m_Texture: {fileID: 2800000, guid: 309e612d45af81448a7135afe423b658, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mage_UpperMask:
+        m_Texture: {fileID: 2800000, guid: 85257033337590c4d9890925fc3df563, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NW_LowerMask:
+        m_Texture: {fileID: 2800000, guid: ad9f5880d3667f94aa9b5ca90a793c87, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NW_UpperMask:
+        m_Texture: {fileID: 2800000, guid: 410203d0ec7910a46acae8e2507d167c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NewbieMage_Mask:
+        m_Texture: {fileID: 2800000, guid: dbe8a0acec1b0164d8fa2cf7eaae8c1d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PeasantMaskUpper:
+        m_Texture: {fileID: 2800000, guid: 3dad59472354942489d9a8c64dba9dff, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Underhair:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Underwear:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ArmorArcherBoots: 0
+    - _ArmorArcherCape: 0
+    - _ArmorArcherChest: 0
+    - _ArmorArcherGloves: 0
+    - _ArmorArcherPants: 0
+    - _ArmorDeathknightArmbandages: 0
+    - _ArmorDeathknightBoots: 0
+    - _ArmorDeathknightChest: 0
+    - _ArmorDeathknightGloves: 0
+    - _ArmorDeathknightPants: 0
+    - _ArmorMageArmbandages: 0
+    - _ArmorMageBoots: 0
+    - _ArmorMageChest: 0
+    - _ArmorMageGloves: 0
+    - _ArmorMagePants: 0
+    - _ArmorMageRobe: 0
+    - _ArmorNewbieMageBelt: 0
+    - _ArmorNewbieMageBoots: 0
+    - _ArmorNewbieMageChest: 0
+    - _ArmorNewbieMageRobe: 0
+    - _ArmorNewbieRangerBelt: 1
+    - _ArmorNewbieRangerBoots: 1
+    - _ArmorNewbieRangerChest: 1
+    - _ArmorNewbieRangerGloves: 1
+    - _ArmorNewbieRangerPants: 1
+    - _ArmorNewbieWarriorBelt: 0
+    - _ArmorNewbieWarriorBoots: 0
+    - _ArmorNewbieWarriorChest: 0
+    - _ArmorNewbieWarriorGloves: 0
+    - _ArmorNewbieWarriorPants: 0
+    - _ArmorPeasantBoots: 0
+    - _ArmorPeasantJacket: 0
+    - _ArmorPeasantPants: 0
+    - _ArmorPeasantShirtwithSleeves: 0
+    - _ArmorPeasantSleevelessShirt: 0
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Gloss: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HasUnderhair: 0
+    - _HasUnderwear: 0
+    - _HueShift: 0
+    - _HueShiftEnabled: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
