@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class WeaponSelectionMenu : MonoBehaviour
 {
     private Vector2 mousePosition;
-    private Vector2 normalisedmousePosition;
+    private Vector2 normalisedMousePosition;
     private float currentAngle;
     private int selection;
     private int previousSelection;
@@ -27,10 +27,10 @@ public class WeaponSelectionMenu : MonoBehaviour
         mousePosition = InputController.Instance.mousePosition;
        // float normalizeMousePosX = Mathf.Clamp01(mousePosition.x / Screen.width);
        // float normalizeMousePosY = Mathf.Clamp01(mousePosition.y / Screen.height);
-        normalisedmousePosition = new Vector2(mousePosition.x - Screen.width/2, mousePosition.y - Screen.height / 2);
+        normalisedMousePosition = new Vector2(mousePosition.x - Screen.width/2, mousePosition.y - Screen.height / 2);
         
 
-        currentAngle = Mathf.Atan2(normalisedmousePosition.y, normalisedmousePosition.x) * Mathf.Rad2Deg;
+        currentAngle = Mathf.Atan2(normalisedMousePosition.y, normalisedMousePosition.x) * Mathf.Rad2Deg;
         currentAngle = (currentAngle + 360) % 360;
        if(currentAngle < 163 && currentAngle > 15)
         {
