@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
-public class WeaponSelectionMenu : MonoBehaviour
+public class MagicSelectionMenu : MonoBehaviour
 {
     private Vector2 mousePosition;
     private Vector2 normalisedMousePosition;
