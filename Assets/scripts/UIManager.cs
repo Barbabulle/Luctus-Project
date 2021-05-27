@@ -1,7 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Serialization;
+using Vector3 = UnityEngine.Vector3;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -12,9 +16,37 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private Transform Heart3;
 
+    [SerializeField] private RectTransform magicSelection;
+
+    public bool canMoveCamera;
+
+    private void Awake()
+    {
+        magicSelection.DOScale(Vector3.zero, 0);
+        magicSelection.gameObject.SetActive(false);
+        
+    }
+
     private void Start()
     {
         StartCoroutine(wait());
+        canMoveCamera = true;
+    }
+    
+    public void magicMenu(bool state)
+    {
+        if (state)
+        {
+            magicSelection.gameObject.SetActive(state);
+            magicSelection.DOScale(Vector3.one*5f , 0.6f).SetEase(Ease.OutQuint);
+            canMoveCamera = false;
+        }
+        else
+        {
+            magicSelection.DOScale(Vector3.zero, 0.6f).SetEase(Ease.OutQuint);
+            magicSelection.gameObject.SetActive(state);
+            canMoveCamera = true;
+        }
     }
 
     private void GetDamage(int lifePoint)

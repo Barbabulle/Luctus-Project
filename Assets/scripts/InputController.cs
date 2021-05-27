@@ -30,11 +30,11 @@ public class InputController : Singleton<InputController>
         compteur += 1;
         if (compteur % 2 == 0)
         {
-            magicSelection.SetActive(false);
+            UIManager.Instance.magicMenu(false);
         }
         else
         {
-            magicSelection.SetActive(true);
+            UIManager.Instance.magicMenu(true);
         }
     }
 }
