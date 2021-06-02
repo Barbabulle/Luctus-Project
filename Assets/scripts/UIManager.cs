@@ -38,7 +38,7 @@ public class UIManager : Singleton<UIManager>
         if (state)
         {
             magicSelection.gameObject.SetActive(state);
-            magicSelection.DOScale(Vector3.one*5f , 0.6f).SetEase(Ease.OutQuint);
+            magicSelection.DOScale(Vector3.one*5f , 0.2f).SetEase(Ease.OutQuint);
             canMoveCamera = false;
         }
         else
@@ -49,7 +49,7 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
-    private void GetDamage(int lifePoint)
+    public void GetDamage(int lifePoint)
     {
         if(lifePoint == 3)
         {

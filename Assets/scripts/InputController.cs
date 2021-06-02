@@ -8,6 +8,7 @@ public class InputController : Singleton<InputController>
     [SerializeField] private GameObject magicSelection;
     
     public PlayerInput playerInput;
+    public static bool GameIsPaused = false;
     private Mouse myMouse;
     public Vector2 mousePosition = new Vector2();
 
@@ -31,10 +32,25 @@ public class InputController : Singleton<InputController>
         if (compteur % 2 == 0)
         {
             UIManager.Instance.magicMenu(false);
+            Resume();
+            
+
         }
         else
         {
             UIManager.Instance.magicMenu(true);
+            Pause();
         }
+    }
+
+    private void Pause()
+    {
+        Time.timeScale = 0.1f;
+        GameIsPaused = false;
+    }
+    private void Resume()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = true;
     }
 }
