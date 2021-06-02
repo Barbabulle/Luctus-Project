@@ -14,6 +14,22 @@ public class MonsterBehaviour : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    
+
+    private void Move()
+    {
+        if (monster.canFly)
+        {
+            
+        }
+        else
+        {
+            
+        }
+    }
+
+    private void Attack()
+    {
+        
+    }
     
 }

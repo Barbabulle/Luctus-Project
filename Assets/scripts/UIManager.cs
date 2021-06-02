@@ -16,6 +16,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private RectTransform magicSelection;
 
     [SerializeField] private Image fadeCD;
+    [SerializeField] private Transform key;
 
     public static bool hasDashed = false;
 
@@ -26,12 +27,22 @@ public class UIManager : Singleton<UIManager>
         magicSelection.DOScale(Vector3.zero, 0);
         magicSelection.gameObject.SetActive(false);
         fadeCD.DOFade(0, 0);
+        key.DOScale(0, 0);
     }
 
     private void Start()
     {
         canMoveCamera = true;
         Dash();
+    }
+
+    public void Getkey()
+    {
+        key.DOScale(1, 0.8f).SetEase(Ease.OutQuint);
+    }
+    public void Usekey()
+    {
+        key.DOScale(0, 0.4f).SetEase(Ease.OutQuint);
     }
 
     public void magicMenu(bool state)
