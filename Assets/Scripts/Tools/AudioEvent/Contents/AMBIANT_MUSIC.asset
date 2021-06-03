@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf35d8fc3f884871bba8933d5b9d6cd, type: 3}
+  m_Name: AMBIANT_MUSIC
+  m_EditorClassIdentifier: 
+  m_AudioMixerGroup: {fileID: 24300002, guid: 2a1a60fadfbcf964da211ffd539e18f1, type: 2}
+  audioSourceType: 1
+  m_IsLooping: 1
+  m_Clips:
+  - {fileID: 8300000, guid: 5936f4e1579d8ec4092c708e0eb3b48a, type: 3}
+  m_Volume:
+    minValue: 0.20087984
+    maxValue: 0.20087984
+  m_Pitch:
+    minValue: 0.9970674
+    maxValue: 0.9970674
