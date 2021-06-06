@@ -11,6 +11,7 @@ public class InputController : Singleton<InputController>
     public static bool GameIsPaused = false;
     private Mouse myMouse;
     public Vector2 mousePosition = new Vector2();
+    public GameObject Player;
 
     private int compteur = 0;
     
@@ -19,6 +20,12 @@ public class InputController : Singleton<InputController>
         myMouse = InputSystem.GetDevice<Mouse>();
         this.playerInput.actions["Mouse"].performed += this.OnMouseMove;
         this.playerInput.actions["MagicSelection"].performed += this.MagicSelection;
+        this.playerInput.actions["Shoot"].performed += this.Shootanim;
+    }
+
+    public void Shootanim(InputAction.CallbackContext ctx)
+    {
+        Player.GetComponent<Animator>().Play("NW_Attack01");
     }
 
     public void OnMouseMove(InputAction.CallbackContext ctx)
