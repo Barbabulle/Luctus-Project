@@ -23,6 +23,7 @@ public class InputController : Singleton<InputController>
         this.playerInput.actions["Shoot"].performed += this.Shootanim;
         this.playerInput.actions["Spell"].performed += this.LaunchSpell;
         playerAnimator = GetComponent<Animator>();
+        playerAnimator = Player.GetComponent<Animator>();
     }
 
     public void LaunchSpell(InputAction.CallbackContext ctx)
