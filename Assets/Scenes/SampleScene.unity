@@ -17509,6 +17509,7 @@ GameObject:
   - component: {fileID: 1987212773}
   - component: {fileID: 1987212775}
   - component: {fileID: 1987212774}
+  - component: {fileID: 1987212777}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -17679,6 +17680,21 @@ MonoBehaviour:
   inputAxis: {x: 0, y: 0}
   mousePos: {x: 0, y: 0}
   worldMousePos: {x: 0, y: 0, z: 0}
+--- !u!114 &1987212777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987212770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a84beb4382b9a41a2e90851e622835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1987212770}
+  vfx:
+  - {fileID: 2751668444887433959, guid: fbdeccdda03d98c45bffc485c83b2457, type: 3}
 --- !u!1001 &1999511725
 PrefabInstance:
   m_ObjectHideFlags: 0

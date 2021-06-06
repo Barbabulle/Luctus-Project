@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnProjectiles : MonoBehaviour
+public class SpawnProjectiles : Singleton<SpawnProjectiles>
 {
     [SerializeField]
     private GameObject firePoint;
