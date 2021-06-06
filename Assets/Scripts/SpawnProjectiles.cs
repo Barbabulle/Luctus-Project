@@ -23,12 +23,13 @@ public class SpawnProjectiles : Singleton<SpawnProjectiles>
         }
     }
 
-   private void SpawnVFX()
+   public void SpawnVFX()
     {
         GameObject vfx;
         if(firePoint != null)
         {
             vfx = Instantiate(effectToSpawn, firePoint.transform.position, Quaternion.identity);
+            vfx.transform.localRotation = this.transform.rotation;
         }
         else
         {

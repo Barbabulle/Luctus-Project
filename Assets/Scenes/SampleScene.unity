@@ -3465,7 +3465,6 @@ RectTransform:
   - {fileID: 903076121}
   - {fileID: 1494120315}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5770,7 +5769,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &616901345
@@ -6517,7 +6515,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &712079393
@@ -17786,6 +17783,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6905b977-3f7f-4f30-b594-cede642e4c59
     m_ActionName: InGame/Shoot[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0401faea-4220-487e-af10-fa3305f4e3ac
+    m_ActionName: InGame/Spell[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: KeyboardMouse
   m_DefaultActionMap: InGame
@@ -17868,7 +17869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a84beb4382b9a41a2e90851e622835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 1987212770}
+  firePoint: {fileID: 1288069330271965930}
   vfx:
   - {fileID: 2751668444887433959, guid: fbdeccdda03d98c45bffc485c83b2457, type: 3}
 --- !u!1001 &1999511725

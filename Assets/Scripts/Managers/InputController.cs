@@ -14,18 +14,25 @@ public class InputController : Singleton<InputController>
     public GameObject Player;
 
     private int compteur = 0;
-    
+    private Animator playerAnimator;
     private void Awake()
     {
         myMouse = InputSystem.GetDevice<Mouse>();
         this.playerInput.actions["Mouse"].performed += this.OnMouseMove;
         this.playerInput.actions["MagicSelection"].performed += this.MagicSelection;
         this.playerInput.actions["Shoot"].performed += this.Shootanim;
+        this.playerInput.actions["Spell"].performed += this.LaunchSpell;
+        playerAnimator = GetComponent<Animator>();
+    }
+
+    public void LaunchSpell(InputAction.CallbackContext ctx)
+    {
+        SpawnProjectiles.Instance.SpawnVFX();
     }
 
     public void Shootanim(InputAction.CallbackContext ctx)
     {
-        Player.GetComponent<Animator>().Play("NW_Attack01");
+        playerAnimator.Play("NW_Attack01");
     }
 
     public void OnMouseMove(InputAction.CallbackContext ctx)
