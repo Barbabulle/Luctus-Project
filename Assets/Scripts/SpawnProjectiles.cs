@@ -5,36 +5,36 @@ using UnityEngine;
 public class SpawnProjectiles : Singleton<SpawnProjectiles>
 {
     [SerializeField]
-    private GameObject firePoint;
+    private Transform firePoint;
     public List<GameObject> vfx = new List<GameObject>();
     private GameObject effectToSpawn;
+
+    private float timeToFire = 0;
     // Start is called before the first frame update
     void Start()
     {
         effectToSpawn = vfx[0];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SpawnVFX();
-        }
-    }
+
 
    public void SpawnVFX()
     {
-        GameObject vfx;
-        if(firePoint != null)
+        if (Time.time >= timeToFire)
         {
-            vfx = Instantiate(effectToSpawn, firePoint.transform.position, Quaternion.identity);
-            vfx.transform.localRotation = this.transform.rotation;
+            timeToFire = Time.time + 1 / effectToSpawn.GetComponent<ProjectileMove>().fireRate;
+            GameObject vfx;
+            if(firePoint != null)
+            {
+                vfx = Instantiate(effectToSpawn, firePoint.position, Quaternion.identity);
+                vfx.transform.localRotation = this.transform.rotation;
+            }
+            else
+            {
+                Debug.Log("No Fire Point");
+            }
         }
-        else
-        {
-            Debug.Log("No Fire Point");
-        }
+
     }
 }
 

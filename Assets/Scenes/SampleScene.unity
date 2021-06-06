@@ -6722,7 +6722,7 @@ GameObject:
   - component: {fileID: 715361462}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17869,7 +17869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a84beb4382b9a41a2e90851e622835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 1288069330271965930}
+  firePoint: {fileID: 6066665912043824426}
   vfx:
   - {fileID: 2751668444887433959, guid: fbdeccdda03d98c45bffc485c83b2457, type: 3}
 --- !u!1001 &1999511725
@@ -19983,6 +19983,10 @@ PrefabInstance:
     - target: {fileID: 9212003899067763802, guid: 559b244123d7d654da79e113230f6c32, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212003899067763802, guid: 559b244123d7d654da79e113230f6c32, type: 3}
+      propertyPath: m_TagString
+      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 559b244123d7d654da79e113230f6c32, type: 3}
@@ -22415,6 +22419,10 @@ PrefabInstance:
     - target: {fileID: 7785218291326740112, guid: cd8023ebe62574044ad3178788ef35fa, type: 3}
       propertyPath: m_Name
       value: S2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574428550844056016, guid: cd8023ebe62574044ad3178788ef35fa, type: 3}
+      propertyPath: m_TagString
+      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd8023ebe62574044ad3178788ef35fa, type: 3}

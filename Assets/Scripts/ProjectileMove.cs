@@ -1,22 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileMove : MonoBehaviour
 {
-    [SerializeField]
-    private float fireRate = 0.25f;
+    
+    public float fireRate = 0.25f;
     [SerializeField]
     private float speed;
     // Start is called before the first frame update
     private Camera camera;
-    void Start()
+   private void Start()
     {
         camera = Camera.main;
     }
 
     // Update is called once per frame
-    void Update()
+ private   void Update()
     {
         if (speed != 0)
         {
@@ -27,4 +28,15 @@ public class ProjectileMove : MonoBehaviour
             Debug.Log("pas de vitesse");
         }
     }
+
+ private void OnCollisionEnter(Collision other)
+ {
+     if (other.gameObject.name != "Player")
+     {
+         speed = 0;
+         Destroy(this.gameObject);
+     }
+     
+ }
 }
+
