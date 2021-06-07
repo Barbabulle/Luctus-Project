@@ -28,48 +28,22 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (UIManager.Instance.canMoveCamera)
         {
+
             Vector3 upCamera = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
 
             #region Animations
 
-            float angle = Vector3.Angle(upCamera, this.worldMousePos);
-            if (this.worldMousePos.x < 0)
-            {
-                angle = -angle;
+            if (this.rb.velocity.magnitude >= 0.3f) {
+                this.animator.SetFloat("xVelocity", Vector3.Dot(this.rb.velocity.normalized, this.transform.right), 0.01f, Time.deltaTime);
+                this.animator.SetFloat("zVelocity", Vector3.Dot(this.rb.velocity.normalized, this.transform.forward), 0.01f, Time.deltaTime);
+            } else {
+                this.animator.SetFloat("xVelocity", 0, 0.01f, Time.deltaTime);
+                this.animator.SetFloat("zVelocity", 0, 0.01f, Time.deltaTime);
             }
-
-            Debug.DrawRay(this.transform.position + Vector3.up * 2, this.rb.velocity * 2, Color.black);
-
-            if (angle <= 45 && angle >= -45)
-            {
-                this.adaptedAngle = this.inputAxis.normalized;
-            }
-
-            if (angle >= 45 && angle <= 135)
-            {
-                this.adaptedAngle.x = -this.inputAxis.normalized.y;
-                this.adaptedAngle.z = this.inputAxis.normalized.x;
-            }
-
-            if (angle >= 135 || angle <= -135)
-            {
-                this.adaptedAngle.x = -this.inputAxis.normalized.x;
-                this.adaptedAngle.z = -this.inputAxis.normalized.y;
-            }
-
-            if (angle <= -45 && angle >= -135)
-            {
-                this.adaptedAngle.x = this.inputAxis.normalized.y;
-                this.adaptedAngle.z = -this.inputAxis.normalized.x;
-            }
-
-
-            this.animator.SetFloat("xVelocity", this.adaptedAngle.x);
-            this.animator.SetFloat("zVelocity", this.adaptedAngle.z);
-            this.animator.SetFloat("yVelocity", this.adaptedAngle.y);
-            this.animator.SetFloat("velocityMagnitude", this.rb.velocity.magnitude);
 
             #endregion
 
@@ -92,28 +66,22 @@ public class PlayerMovement : MonoBehaviour
 
             Vector2 movement = this.inputAxis * this.acceleration * Time.deltaTime;
 
-            if (this.inputAxis != this.lateInputAxis)
-            {
+            if (this.inputAxis != this.lateInputAxis) {
                 this.rb.velocity = Vector3.zero;
             }
 
-            if (this.inputAxis.magnitude >= 0.1f)
-            {
-                if (this.rb.velocity.magnitude <= this.speedMax)
-                {
+            if (this.inputAxis.magnitude >= 0.1f) {
+                if (this.rb.velocity.magnitude <= this.speedMax) {
                     this.rb.AddForce(new Vector3(movement.x, 0, movement.y), ForceMode.Impulse);
-                }
-                else
-                {
+                } else {
                     this.rb.velocity -= this.rb.velocity * 2f * Time.deltaTime;
                 }
-            }
-            else
-            {
+            } else {
                 this.rb.velocity -= this.rb.velocity * 10f * Time.deltaTime;
             }
 
             #endregion
+
         }
     }
 
