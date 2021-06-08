@@ -20,18 +20,14 @@ public class DoorOpen : MonoBehaviour
 
     [SerializeField] private List<GameObject> skelettons = new List<GameObject>();
     
+    
     private void Awake()
     {
         TurnGreen.OnTurnGreen += OnTurnGreen;
         MonsterBehaviour.OnDeath += OpenSecondDoors;
+        FirstDoor.OnDoorOpened += OpenVerticalDoors;
     }
-
-    private void Start()
-    {
-        OpenVerticalDoors();
-    }
-
-
+    
     private void OnTurnGreen(int value)
     {
         greenLights += 1;
@@ -58,9 +54,10 @@ public class DoorOpen : MonoBehaviour
        
     }
 
-    public void OpenVerticalDoors()
+    public void OpenVerticalDoors(int value)
     {
-        verticalDoorLeft.DOMove(new Vector3(0, 20, 0), 1.2f, false);
-        verticalDoorRight.DOMove(new Vector3(0, 20, 0), 1.2f, false);
+        verticalDoorLeft.DOMoveY(2.6f, 1.8f, false);
+        verticalDoorRight.DOMoveY(2.6f, 1.8f, false);
     }
+
 }
