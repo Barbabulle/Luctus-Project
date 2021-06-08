@@ -30,6 +30,8 @@ public class MonsterBehaviour : MonoBehaviour
     [SerializeField]   private float sightRange, attackRange;
     private bool playerInSightRange, playerinAttackRange;
 
+    [SerializeField] private Animator monsterAnimator;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -45,11 +47,16 @@ public class MonsterBehaviour : MonoBehaviour
         if(playerInSightRange && playerinAttackRange)AttackPlayer();
     }
 
+    #region Behaviours
     private void Patroling()
     {
         if (!walkPointSet) SearchWalkPoint();
         if (walkPointSet)
+        {
             agent.SetDestination((walkpoint));
+            monsterAnimator.Play("1handedWalk");
+        }
+     
         Vector3 distanceToWalkPoint = transform.position - walkpoint;
 
         if (distanceToWalkPoint.magnitude < 1f)
@@ -69,6 +76,7 @@ public class MonsterBehaviour : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination((player.position));
+        monsterAnimator.Play("1handedRun");
     }
 
     private void AttackPlayer()
@@ -78,6 +86,7 @@ public class MonsterBehaviour : MonoBehaviour
         if (!alreadyAttacked)
         {
             //gérer les attaques ici
+            monsterAnimator.Play("1handedAttack1");
             
             
             
@@ -85,6 +94,10 @@ public class MonsterBehaviour : MonoBehaviour
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
+    
+
+    #endregion
+  
 
     private void ResetAttack()
     {

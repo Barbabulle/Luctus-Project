@@ -118,11 +118,12 @@ MonoBehaviour:
     m_Bits: 1
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   walkPointRange: 5
   timeBetweenAttacks: 1.2
   sightRange: 20
-  attackRange: 12
+  attackRange: 5
+  monsterAnimator: {fileID: 6198719003040951103}
 --- !u!195 &8114658154352302395
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8114658154352302397}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
+  m_Radius: 0.49
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -140,8 +141,8 @@ NavMeshAgent:
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
+  m_AutoRepath: 0
+  m_Height: 1.97
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -200,10 +201,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 5bdb723f10fa9bd498f304f0a10f2ec4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4a2c4dbee89a409448f8149b5657867f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bdb723f10fa9bd498f304f0a10f2ec4, type: 3}
 --- !u!4 &6198719003031946459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 5bdb723f10fa9bd498f304f0a10f2ec4, type: 3}
+  m_PrefabInstance: {fileID: 6198719003031559775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6198719003040951103 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 5bdb723f10fa9bd498f304f0a10f2ec4, type: 3}
   m_PrefabInstance: {fileID: 6198719003031559775}
   m_PrefabAsset: {fileID: 0}
