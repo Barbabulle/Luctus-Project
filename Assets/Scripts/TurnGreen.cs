@@ -7,6 +7,7 @@ public class TurnGreen : MonoBehaviour
 {
     private Material[] mats;
     private Renderer rend;
+    public static event Action<int> OnTurnGreen;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class TurnGreen : MonoBehaviour
         if (other.collider.gameObject.name != "Player")
         {
             rend.material = mats[1]; 
+            OnTurnGreen?.Invoke(1);
         }
         
     }
