@@ -32,6 +32,8 @@ public class MonsterBehaviour : MonoBehaviour
 
     [SerializeField] private Animator monsterAnimator;
 
+    public static event Action<int> OnDeath;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -107,6 +109,7 @@ public class MonsterBehaviour : MonoBehaviour
     {
         if (monster.lifePoints <= 0)
         {
+            OnDeath?.Invoke(1);
             Destroy(this.gameObject);
         }
     }

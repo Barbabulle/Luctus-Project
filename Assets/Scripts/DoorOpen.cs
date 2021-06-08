@@ -7,30 +7,60 @@ using UnityEngine;
 public class DoorOpen : MonoBehaviour
 {
     [SerializeField] private Transform doorLeft;
+    [SerializeField] private Transform verticalDoorLeft;
     [SerializeField] private Transform doorRight;
-    private int greenLights;
+    [SerializeField] private Transform verticalDoorRight;
+    [SerializeField] private Transform SecondDoorRight;
+    [SerializeField] private Transform SecondDoorLeft;
+    [SerializeField]private Transform SecondOpenRightDoor;
+    [SerializeField] private Transform SecondOpenLeftDoor;
+    private int greenLights = 0;
     [SerializeField]private Transform openRightDoor;
     [SerializeField] private Transform openLeftDoor;
+
+    [SerializeField] private List<GameObject> skelettons = new List<GameObject>();
     
     private void Awake()
     {
         TurnGreen.OnTurnGreen += OnTurnGreen;
+        MonsterBehaviour.OnDeath += OpenSecondDoors;
     }
-    
+
+    private void Start()
+    {
+        OpenVerticalDoors();
+    }
+
 
     private void OnTurnGreen(int value)
     {
-        greenLights += value;
+        greenLights += 1;
         if (greenLights >= 3)
         {
-            OpenDoors();
+            OpenGreenLightsDoors();
         }
     }
 
-    public void OpenDoors()
+    public void OpenGreenLightsDoors()
     {
         doorLeft.DORotate(new Vector3(0, 90, 0), 1.2f, RotateMode.LocalAxisAdd);
         doorRight.DORotate(new Vector3(0, -90, 0), 1.2f, RotateMode.LocalAxisAdd);
         
+    }
+
+    public void OpenSecondDoors(int value)
+    {
+        if (skelettons.Count >= 0)
+        {
+            SecondOpenLeftDoor.DORotate(new Vector3(0, 90, 0), 1.2f, RotateMode.LocalAxisAdd);
+            SecondOpenRightDoor.DORotate(new Vector3(0, -90, 0), 1.2f, RotateMode.LocalAxisAdd);
+        }
+       
+    }
+
+    public void OpenVerticalDoors()
+    {
+        verticalDoorLeft.DOMove(new Vector3(0, 20, 0), 1.2f, false);
+        verticalDoorRight.DOMove(new Vector3(0, 20, 0), 1.2f, false);
     }
 }
