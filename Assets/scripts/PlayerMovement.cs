@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             #region Rotation : Lookat mouse
 
             RaycastHit hitInfo;
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(this.mousePos), out hitInfo, this.mouseDetection))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(this.mousePos), out hitInfo, Mathf.Infinity, this.mouseDetection))
             {
                 this.worldMousePos = hitInfo.point;
             }
