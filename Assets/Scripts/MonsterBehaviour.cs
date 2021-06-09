@@ -56,6 +56,8 @@ public class MonsterBehaviour : MonoBehaviour
         if (walkPointSet)
         {
             agent.SetDestination((walkpoint));
+            monsterAnimator.SetBool("IsRunning",false);
+            monsterAnimator.SetBool("IsIdle",false);
             monsterAnimator.Play("1handedWalk");
         }
      
@@ -78,6 +80,8 @@ public class MonsterBehaviour : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination((player.position));
+        monsterAnimator.SetBool("IsWalking",false);
+        monsterAnimator.SetBool("IsRunning",true);
         monsterAnimator.Play("1handedRun");
     }
 
@@ -88,9 +92,9 @@ public class MonsterBehaviour : MonoBehaviour
         if (!alreadyAttacked)
         {
             //gérer les attaques ici
+            monsterAnimator.SetTrigger("1handedAttack1");
             monsterAnimator.Play("1handedAttack1");
-            
-            
+              
             
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
