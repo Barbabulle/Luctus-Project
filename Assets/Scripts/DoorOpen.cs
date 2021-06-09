@@ -26,6 +26,7 @@ public class DoorOpen : MonoBehaviour
         TurnGreen.OnTurnGreen += OnTurnGreen;
         MonsterBehaviour.OnDeath += OpenSecondDoors;
         FirstDoor.OnDoorOpened += OpenVerticalDoors;
+
     }
     
     private void OnTurnGreen(int value)
@@ -46,12 +47,21 @@ public class DoorOpen : MonoBehaviour
 
     public void OpenSecondDoors(int value)
     {
-        if (skelettons.Count >= 0)
+        for (int i = 0; i < skelettons.Count; i++)
         {
-            SecondOpenLeftDoor.DORotate(new Vector3(0, 90, 0), 1.2f, RotateMode.LocalAxisAdd);
-            SecondOpenRightDoor.DORotate(new Vector3(0, -90, 0), 1.2f, RotateMode.LocalAxisAdd);
+            int compteur = 0;
+            if (skelettons[i] == null)
+            {
+                compteur++;
+            }
+
+            if (compteur >= 5)
+            {
+                SecondOpenLeftDoor.DORotate(new Vector3(0, 90, 0), 1.2f, RotateMode.LocalAxisAdd);
+                SecondOpenRightDoor.DORotate(new Vector3(0, -90, 0), 1.2f, RotateMode.LocalAxisAdd); 
+            }   
         }
-       
+
     }
 
     public void OpenVerticalDoors(int value)
