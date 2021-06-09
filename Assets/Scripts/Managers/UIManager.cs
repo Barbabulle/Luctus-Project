@@ -41,7 +41,6 @@ public class UIManager : Singleton<UIManager>
         Hearts.Add(Heart3);
         canMoveCamera = true;
         Dash();
-        UpdateDisplay(0);
     }
 
     public void Getkey()

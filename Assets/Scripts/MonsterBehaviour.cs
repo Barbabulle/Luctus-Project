@@ -13,7 +13,8 @@ public class MonsterBehaviour : MonoBehaviour
 
     private NavMeshAgent agent;
 
-    [SerializeField] private Transform player;
+    private GameObject playerObject; 
+    private Transform player;
 
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
   
@@ -37,6 +38,10 @@ public class MonsterBehaviour : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        monsterAnimator.SetBool("IsIdle",true);
+        playerObject = GameObject.FindWithTag("Player");
+        player = playerObject.transform;
+
     }
 
     private void Update()
@@ -44,7 +49,7 @@ public class MonsterBehaviour : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerinAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         
-        if(!playerInSightRange && !playerinAttackRange) Patroling();
+       // if(!playerInSightRange && !playerinAttackRange) Patroling();
         if(playerInSightRange && !playerinAttackRange)ChasePlayer();
         if(playerInSightRange && playerinAttackRange)AttackPlayer();
     }
@@ -58,7 +63,7 @@ public class MonsterBehaviour : MonoBehaviour
             agent.SetDestination((walkpoint));
             monsterAnimator.SetBool("IsRunning",false);
             monsterAnimator.SetBool("IsIdle",false);
-            monsterAnimator.Play("1handedWalk");
+            monsterAnimator.SetBool("IsWalking",true);
         }
      
         Vector3 distanceToWalkPoint = transform.position - walkpoint;
@@ -79,10 +84,11 @@ public class MonsterBehaviour : MonoBehaviour
 
     private void ChasePlayer()
     {
+        monsterAnimator.SetTrigger("GetOfGround");
         agent.SetDestination((player.position));
+        monsterAnimator.SetBool("IsIdle",false);
         monsterAnimator.SetBool("IsWalking",false);
         monsterAnimator.SetBool("IsRunning",true);
-        monsterAnimator.Play("1handedRun");
     }
 
     private void AttackPlayer()
@@ -94,7 +100,6 @@ public class MonsterBehaviour : MonoBehaviour
             //gérer les attaques ici
             monsterAnimator.SetTrigger("1handedAttack1");
             monsterAnimator.Play("1handedAttack1");
-              
             
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
