@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &4345112464632893846
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6198719003031591293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300010, guid: 5bdb723f10fa9bd498f304f0a10f2ec4, type: 3}
+--- !u!114 &6645690375197176832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6198719003031591293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2343118de35860b42a8ef413d4176d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8114658154352302397
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,7 +42,7 @@ GameObject:
   - component: {fileID: 8114658154352302395}
   m_Layer: 0
   m_Name: Skeletton
-  m_TagString: Untagged
+  m_TagString: Monsters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,13 +138,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 11400000, guid: b0c3677bd34e7b848b7ecd3f09af8d1b, type: 2}
-  player: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
+  sword: {fileID: 6645690375197176832}
   walkPointRange: 5
   timeBetweenAttacks: 1.2
   sightRange: 15
@@ -251,5 +277,10 @@ Transform:
 --- !u!95 &6198719003040951103 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 5bdb723f10fa9bd498f304f0a10f2ec4, type: 3}
+  m_PrefabInstance: {fileID: 6198719003031559775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6198719003031591293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100130, guid: 5bdb723f10fa9bd498f304f0a10f2ec4, type: 3}
   m_PrefabInstance: {fileID: 6198719003031559775}
   m_PrefabAsset: {fileID: 0}

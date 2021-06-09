@@ -17,7 +17,10 @@ public class MonsterBehaviour : MonoBehaviour
     private Transform player;
 
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
-  
+    [SerializeField] private Sword sword;
+    
+
+
     //Patroling
     private Vector3 walkpoint;
     private bool walkPointSet;
@@ -41,7 +44,7 @@ public class MonsterBehaviour : MonoBehaviour
         monsterAnimator.SetBool("IsIdle",true);
         playerObject = GameObject.FindWithTag("Player");
         player = playerObject.transform;
-
+        sword.OnSwordTouch += Attack;
     }
 
     private void Update()
@@ -108,7 +111,11 @@ public class MonsterBehaviour : MonoBehaviour
     
 
     #endregion
-  
+
+    private void Attack(int value)
+    {
+        PlayerData.Instance.GetDamage(monster.strength);
+    }
 
     private void ResetAttack()
     {
@@ -135,9 +142,6 @@ public class MonsterBehaviour : MonoBehaviour
         }
     }
 
-    private void Attack()
-    {
-        
-    }
+
     
 }

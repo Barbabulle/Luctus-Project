@@ -11,7 +11,7 @@ public class Monsters : ScriptableObject
     public string name;
     public float lifePoints;
     public float speed;
-    public float strength;
+    public int strength;
     public float magicResistance;
     public bool canFly;
     

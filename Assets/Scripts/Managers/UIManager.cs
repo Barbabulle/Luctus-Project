@@ -89,6 +89,7 @@ public class UIManager : Singleton<UIManager>
                 {
                     // Animation apparition
                     heart.gameObject.SetActive(true);
+                    heart.DOScale(Vector3.one*1.24f, 0).SetEase(Ease.OutBounce);
                 }
             }
             else
