@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerData : Singleton<PlayerData>
 {
-    private float lifePoints = 3;
+    private int lifePoints = 3;
     private float strength = 1;
 
-    public void GetDamage(int life)
+    public void GetDamage()
     {
-        UIManager.Instance.GetDamage(life);
+        UIManager.Instance.UpdateDisplay(lifePoints);
     }
 }

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Serialization;
@@ -21,6 +23,7 @@ public class UIManager : Singleton<UIManager>
     public static bool hasDashed = false;
 
     public bool canMoveCamera;
+    private List<Transform> Hearts = new List<Transform>();
 
     private void Awake()
     {
@@ -31,9 +34,14 @@ public class UIManager : Singleton<UIManager>
     }
 
     private void Start()
+    
     {
+        Hearts.Add(Heart1);
+        Hearts.Add(Heart2);
+        Hearts.Add(Heart3);
         canMoveCamera = true;
         Dash();
+        UpdateDisplay(0);
     }
 
     public void Getkey()
@@ -64,30 +72,39 @@ public class UIManager : Singleton<UIManager>
     public void Dash()
     {
         hasDashed = true;
-        Debug.Log(hasDashed);
+       // Debug.Log(hasDashed);
         fadeCD.DOFade(0.5f, 0).OnComplete(() => fadeCD.DOFade(0, 5f));
         StartCoroutine(wait());
         
     }
 
-    public void GetDamage(int lifePoint)
+    public void UpdateDisplay(int health)
     {
-        if (lifePoint == 3)
+        for (int i = 0; i < Hearts.Count; i++)
         {
-            Heart3.transform.DOScale(Vector3.one * 1.4f, 0.4f).SetEase(Ease.OutBounce)
-                .OnComplete(() => Heart3.transform.DOScale(Vector3.zero, 0.4f)).SetEase(Ease.OutQuint);
-        }
-        else if (lifePoint == 2)
-        {
-            Heart2.transform.DOScale(Vector3.one * 1.4f, 0.4f).SetEase(Ease.OutQuint)
-                .OnComplete(() => Heart2.transform.DOScale(Vector3.zero, 0.4f)).SetEase(Ease.OutQuint);
-        }
-        else
-        {
-            Heart1.transform.DOScale(Vector3.one * 1.4f, 0.4f).SetEase(Ease.OutQuint)
-                .OnComplete(() => Heart1.transform.DOScale(Vector3.zero, 0.4f)).SetEase(Ease.OutQuint);
+            Transform heart = Hearts[i];
+            if (i < health)
+            {
+                // Heart enabled
+                if (!heart.gameObject.activeSelf)
+                {
+                    // Animation apparition
+                    heart.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                // Heart disabled
+                if (heart.gameObject.activeSelf)
+                {
+                    // Animation disparition
+                    heart.DOScale(Vector3.one * 1.4f, 0.4f).SetEase(Ease.OutBounce)
+                        .OnComplete(() => heart.DOScale(Vector3.zero, 0.4f).OnComplete(() => heart.gameObject.SetActive(false))).SetEase(Ease.OutQuint);
+                }
+            }
         }
     }
+    
 
     private IEnumerator wait()
     {
