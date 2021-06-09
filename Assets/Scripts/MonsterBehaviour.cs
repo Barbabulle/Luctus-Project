@@ -12,6 +12,7 @@ public class MonsterBehaviour : MonoBehaviour
     [SerializeField] private Monsters monster;
 
     private NavMeshAgent agent;
+    private int lifepoints;
 
     private GameObject playerObject; 
     private Transform player;
@@ -45,6 +46,8 @@ public class MonsterBehaviour : MonoBehaviour
         playerObject = GameObject.FindWithTag("Player");
         player = playerObject.transform;
         sword.OnSwordTouch += Attack;
+        playerSword.OnDamageToMonster += Death;
+        lifepoints = monster.lifePoints;
     }
 
     private void Update()
@@ -121,9 +124,10 @@ public class MonsterBehaviour : MonoBehaviour
     {
         alreadyAttacked = false;
     }
-    private void Death()
+    private void Death(int value)
     {
-        if (monster.lifePoints <= 0)
+        lifepoints -= value;
+        if (lifepoints<=0)
         {
             OnDeath?.Invoke(1);
             Destroy(this.gameObject);

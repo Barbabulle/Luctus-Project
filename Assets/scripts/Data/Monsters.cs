@@ -9,7 +9,7 @@ public class Monsters : ScriptableObject
     #region Attributes
 
     public string name;
-    public float lifePoints;
+    public int lifePoints;
     public float speed;
     public int strength;
     public float magicResistance;

@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class PlayerData : Singleton<PlayerData>
 {
-    private int lifePoints = 3;
-    private int strength = 2;
+    public int lifePoints = 3;
+    public int strength = 2;
 
    Transform player;
+   
 
    private void Awake()
    {
