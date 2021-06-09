@@ -104,8 +104,8 @@ public class MonsterBehaviour : MonoBehaviour
         if (!alreadyAttacked)
         {
             //gérer les attaques ici
-            monsterAnimator.SetTrigger("1handedAttack1");
-            monsterAnimator.Play("1handedAttack1");
+            monsterAnimator.SetTrigger("Attack1");
+            monsterAnimator.Play("Attack1");
             
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -124,7 +124,7 @@ public class MonsterBehaviour : MonoBehaviour
     {
         alreadyAttacked = false;
     }
-    private void Death(int value)
+    public void Death(int value)
     {
         lifepoints -= value;
         if (lifepoints<=0)

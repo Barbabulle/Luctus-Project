@@ -6,11 +6,12 @@ using UnityEngine;
 public class playerSword : MonoBehaviour
 {
     public static event Action <int> OnDamageToMonster;
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.collider.CompareTag("Monsters"))
-        {
-            OnDamageToMonster?.Invoke(PlayerData.Instance.strength);
+
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Monsters")) {
+            other.gameObject.GetComponent<MonsterBehaviour>().Death(PlayerData.Instance.strength);
         }
     }
+
 }
