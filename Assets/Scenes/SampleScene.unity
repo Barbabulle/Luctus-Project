@@ -6365,7 +6365,7 @@ Transform:
   - {fileID: 1574917473}
   - {fileID: 1818575203}
   m_Father: {fileID: 1728673791}
-  m_RootOrder: 154
+  m_RootOrder: 155
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &612830454
 MonoBehaviour:
@@ -6971,7 +6971,7 @@ Transform:
   m_LocalScale: {x: 2.0809, y: 2.0809, z: 2.0809}
   m_Children: []
   m_Father: {fileID: 1728673791}
-  m_RootOrder: 152
+  m_RootOrder: 153
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &670894104
 SphereCollider:
@@ -11812,7 +11812,7 @@ Transform:
   m_GameObject: {fileID: 1104069677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.7666218, y: 2.7666218, z: 2.7666218}
+  m_LocalScale: {x: 15.18239, y: 15.18239, z: 15.18239}
   m_Children: []
   m_Father: {fileID: 1936141768}
   m_RootOrder: 0
@@ -12813,7 +12813,7 @@ Transform:
   m_LocalScale: {x: 2.0809, y: 2.0809, z: 2.0809}
   m_Children: []
   m_Father: {fileID: 1728673791}
-  m_RootOrder: 150
+  m_RootOrder: 152
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1187081062
 SphereCollider:
@@ -16849,7 +16849,7 @@ RectTransform:
   m_Children:
   - {fileID: 712149046}
   m_Father: {fileID: 1728673791}
-  m_RootOrder: 155
+  m_RootOrder: 156
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.035, y: 0.158}
   m_AnchorMax: {x: 0.2706245, y: 0.735}
@@ -18143,7 +18143,7 @@ Transform:
   m_LocalScale: {x: 2.0809, y: 2.0809, z: 2.0809}
   m_Children: []
   m_Father: {fileID: 1728673791}
-  m_RootOrder: 153
+  m_RootOrder: 154
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1813437129
 SphereCollider:
@@ -18572,7 +18572,7 @@ Transform:
   m_LocalScale: {x: 4.3614144, y: 1, z: 1.8114882}
   m_Children: []
   m_Father: {fileID: 1728673791}
-  m_RootOrder: 156
+  m_RootOrder: 157
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1842583238
 MeshCollider:
@@ -19743,12 +19743,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1987212771}
   - component: {fileID: 1987212772}
+  - component: {fileID: 1987212778}
   - component: {fileID: 1987212776}
+  - component: {fileID: 1987212779}
+  - component: {fileID: 1987212777}
   - component: {fileID: 1987212773}
   - component: {fileID: 1987212775}
   - component: {fileID: 1987212774}
-  - component: {fileID: 1987212777}
-  - component: {fileID: 1987212778}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -19850,7 +19851,19 @@ MonoBehaviour:
     m_ActionId: db49be8f-7dd8-42b9-963f-7babca48fec4
     m_ActionName: InGame/MagicSelection[/Keyboard/tab]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1987212779}
+        m_TargetAssemblyTypeName: PlayerAttacks, Assembly-CSharp
+        m_MethodName: MeleeAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6905b977-3f7f-4f30-b594-cede642e4c59
     m_ActionName: InGame/Shoot[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -19954,6 +19967,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1c6eb91fa62d44588ee1cfb75e8a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifePoints: 3
+  strength: 2
+--- !u!114 &1987212779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987212770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec4bdd73b148a64194cf4f54efcd66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5497725552999666218}
+  damage: 1
 --- !u!4 &1987519545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4260278276860498, guid: da0e66160fcf42da8b2bbae99a64c243, type: 3}
@@ -25211,7 +25240,7 @@ Animator:
   m_GameObject: {fileID: 1288069330271965930}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7dd9baf9eb65972438aef46b269991d0, type: 3}
-  m_Controller: {fileID: 9100000, guid: 20ed83cb9b7d24c46b733e3d45e97c86, type: 2}
+  m_Controller: {fileID: 9100000, guid: a00ff97482d71834abd1735e46657d12, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
