@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class playerSword : MonoBehaviour
 {
-    public static event Action <int> OnDamageToMonster;
 
 
     private void OnTriggerEnter(Collider other) {

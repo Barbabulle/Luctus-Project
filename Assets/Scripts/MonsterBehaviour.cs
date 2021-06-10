@@ -36,8 +36,7 @@ public class MonsterBehaviour : MonoBehaviour
     private bool playerInSightRange, playerinAttackRange;
 
     [SerializeField] private Animator monsterAnimator;
-
-    public static event Action<int> OnDeath;
+    
 
     private void Awake()
     {
@@ -46,9 +45,11 @@ public class MonsterBehaviour : MonoBehaviour
         playerObject = GameObject.FindWithTag("Player");
         player = playerObject.transform;
         sword.OnSwordTouch += Attack;
-        playerSword.OnDamageToMonster += Death;
         lifepoints = monster.lifePoints;
+        DoorOpen.Instance.skelettons.Add(gameObject);
+        Debug.Log(DoorOpen.Instance.skelettons.Count);
     }
+    
 
     private void Update()
     {
@@ -129,7 +130,8 @@ public class MonsterBehaviour : MonoBehaviour
         lifepoints -= value;
         if (lifepoints<=0)
         {
-            OnDeath?.Invoke(1);
+            DoorOpen.Instance.skelettons.Remove(gameObject); 
+            DoorOpen.Instance.OpenSecondDoors(1);
             Destroy(this.gameObject);
         }
     }
