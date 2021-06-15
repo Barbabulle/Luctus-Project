@@ -9,11 +9,16 @@ public class PlayerAttacks : MonoBehaviour
     [Header("Components")]
 
     public Animator animator;
+    public enum Spell {
+        FireBall
+    }
 
 
     [Header("variables")]
 
     public float damage;
+
+    public Spell currentSpell;
 
     void Start()
     {
@@ -26,6 +31,11 @@ public class PlayerAttacks : MonoBehaviour
 
         }
     }
+    public void LaunchSpell(InputAction.CallbackContext ctx) {
+        SpawnProjectiles.Instance.SpawnVFX();
+    }
+
+    
 
 
 }

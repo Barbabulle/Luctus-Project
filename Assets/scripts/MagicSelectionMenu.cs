@@ -24,7 +24,6 @@ public class MagicSelectionMenu : MonoBehaviour
 
     private void Update()
     {
-        mousePosition = InputController.Instance.mousePosition;
        // float normalizeMousePosX = Mathf.Clamp01(mousePosition.x / Screen.width);
        // float normalizeMousePosY = Mathf.Clamp01(mousePosition.y / Screen.height);
         normalisedMousePosition = new Vector2(mousePosition.x - Screen.width/2, mousePosition.y - Screen.height / 2);
@@ -47,8 +46,11 @@ public class MagicSelectionMenu : MonoBehaviour
             }
         }
         
-        
-
 
     }
+
+    public void MousePos(InputAction.CallbackContext ctx) {
+        this.mousePosition = ctx.ReadValue<Vector2>();
+    }
+
 }
