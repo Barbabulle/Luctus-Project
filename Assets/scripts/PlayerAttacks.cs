@@ -10,13 +10,19 @@ public class PlayerAttacks : MonoBehaviour
 
     public Animator animator;
     public enum Spell {
-        FireBall
+        Curse
     }
+
+    public List<GameObject> Spells = new List<GameObject>();
+    
+
 
 
     [Header("variables")]
 
     public float damage;
+
+    public Transform shootPoint;
 
     public Spell currentSpell;
 
@@ -32,7 +38,15 @@ public class PlayerAttacks : MonoBehaviour
         }
     }
     public void LaunchSpell(InputAction.CallbackContext ctx) {
-        SpawnProjectiles.Instance.SpawnVFX();
+        if (ctx.started) {
+            switch (this.currentSpell) {
+                case Spell.Curse: {
+                        GameObject spawned = Instantiate(this.Spells[(int)Spell.Curse], this.shootPoint.position, this.shootPoint.rotation);
+
+                        break;
+                    }
+            }
+        }
     }
 
     

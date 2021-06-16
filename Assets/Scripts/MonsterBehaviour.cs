@@ -12,18 +12,17 @@ public class MonsterBehaviour : MonoBehaviour
     [SerializeField] private Monsters monster;
 
     private NavMeshAgent agent;
-    private int lifepoints;
-
     private GameObject playerObject; 
     private Transform player;
-
+    [SerializeField] private Animator monsterAnimator;
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
     [SerializeField] private Sword sword;
-    
+    private Vector3 walkpoint;
 
+
+    private int lifepoints;
 
     //Patroling
-    private Vector3 walkpoint;
     private bool walkPointSet;
     [SerializeField]  private float walkPointRange;
     
@@ -35,7 +34,6 @@ public class MonsterBehaviour : MonoBehaviour
     [SerializeField]   private float sightRange, attackRange;
     private bool playerInSightRange, playerinAttackRange;
 
-    [SerializeField] private Animator monsterAnimator;
     
 
     private void Awake()
@@ -55,16 +53,22 @@ public class MonsterBehaviour : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerinAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        
-       // if(!playerInSightRange && !playerinAttackRange) Patroling();
-        if(playerInSightRange && !playerinAttackRange)ChasePlayer();
-        if(playerInSightRange && playerinAttackRange)AttackPlayer();
+
+        // if(!playerInSightRange && !playerinAttackRange) Patroling();
+        if (playerInSightRange && !playerinAttackRange) {
+            ChasePlayer();
+        }
+        if (playerInSightRange && playerinAttackRange) {
+            AttackPlayer();
+        }
     }
 
     #region Behaviours
     private void Patroling()
     {
-        if (!walkPointSet) SearchWalkPoint();
+        if (!walkPointSet) {
+            SearchWalkPoint();
+        }
         if (walkPointSet)
         {
             agent.SetDestination((walkpoint));
@@ -75,8 +79,9 @@ public class MonsterBehaviour : MonoBehaviour
      
         Vector3 distanceToWalkPoint = transform.position - walkpoint;
 
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 1f) {
             walkPointSet = false;
+        }
     }
 
     private void SearchWalkPoint()
@@ -91,8 +96,7 @@ public class MonsterBehaviour : MonoBehaviour
 
     private void ChasePlayer()
     {
-        monsterAnimator.SetTrigger("GetOfGround");
-        agent.SetDestination((player.position));
+        agent.SetDestination(player.position);
         monsterAnimator.SetBool("IsIdle",false);
         monsterAnimator.SetBool("IsWalking",false);
         monsterAnimator.SetBool("IsRunning",true);
@@ -100,7 +104,7 @@ public class MonsterBehaviour : MonoBehaviour
 
     private void AttackPlayer()
     {
-        agent.SetDestination((transform.position));
+        agent.speed = 0;
         transform.LookAt(player);
         if (!alreadyAttacked)
         {
